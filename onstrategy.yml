@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    volumes: 
+      - mysql-data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3308:3306"
+  mysql2:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    volumes: 
+      - mysql2-data:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "3310:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOSTS: mysql,mysql2 
+      PMA_USER: root
+      PMA_PASSWORD: root
+      PMA_ARBITRARY: 1
+    ports:
+      - "8999:80"
+  apache-php:
+    environment:
+      APACHE_CONTENT_ROOT: "/var/www/html"
+      APACHE_PUBLIC_DIRECTORY: "public_html"
+    image: "onstrategy/web-app:latest"
+    restart: "always"
+    container_name: "oswebapp74"
+    volumes: 
+      - app-data:/var/www/html
+    ports:
+      - "8181:80"
+      - "8888:8888"
+volumes: 
+  app-data: 
+  mysql-data: 
+  mysql2-data: 
