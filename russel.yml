@@ -18,6 +18,7 @@ services:
       PMA_HOST: mysql 
       PMA_USER: root
       PMA_PASSWORD: root
+      PMA_ARBITRARY: 1
     ports:
       - "8999:80"
   apache-php:
