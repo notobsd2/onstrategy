@@ -18,7 +18,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
     volumes: 
-      - mysql-data:/var/lib/mysql
+      - mysql2-data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
     ports:
       - "3309:3306"
@@ -47,3 +47,4 @@ services:
 volumes: 
   app-data: 
   mysql-data: 
+  mysql2-data: 
