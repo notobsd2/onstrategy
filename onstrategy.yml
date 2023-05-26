@@ -32,18 +32,6 @@ services:
       PMA_ARBITRARY: 1
     ports:
       - "8999:80"
-  apache-php:
-    environment:
-      APACHE_CONTENT_ROOT: "/var/www/html"
-      APACHE_PUBLIC_DIRECTORY: "public_html"
-    image: "onstrategy/web-app:latest"
-    restart: "always"
-    container_name: "oswebapp74"
-    volumes: 
-      - app-data:/var/www/html
-    ports:
-      - "8181:80"
-      - "8888:8888"
 volumes: 
   app-data: 
   mysql-data: 
