@@ -9,6 +9,8 @@ services:
     volumes: 
       - mysql-data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
+    networks: 
+      - onstrategy-mysql-docker
     ports:
       - "3308:3306"
   mysql2:
@@ -20,6 +22,8 @@ services:
     volumes: 
       - mysql2-data:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
+    networks: 
+      - onstrategy-mysql-docker
     ports:
       - "3310:3306"
   
