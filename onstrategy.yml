@@ -22,17 +22,9 @@ services:
       - ./my.cnf:/etc/mysql/my.cnf
     ports:
       - "3310:3306"
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    restart: always
-    environment:
-      PMA_HOSTS: mysql,mysql2 
-      PMA_USER: root
-      PMA_PASSWORD: root
-      PMA_ARBITRARY: 1
-    ports:
-      - "8999:80"
+  
 volumes: 
-  app-data: 
   mysql-data: 
-  mysql2-data: 
+  mysql2-data:
+networks: 
+  onstrategy-mysql-docker:
