@@ -4,7 +4,8 @@ services:
       image: phpmyadmin/phpmyadmin:latest
       restart: always
       environment:
-        PMA_HOSTS: mysql,mysql2 
+        PMA_HOSTS: mysql,mysql2
+        PMA_PORTS: 3308,3310 
         PMA_USER: root
         PMA_PASSWORD: root
         PMA_ARBITRARY: 1
