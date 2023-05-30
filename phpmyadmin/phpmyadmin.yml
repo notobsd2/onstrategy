@@ -4,7 +4,7 @@ services:
       image: phpmyadmin/phpmyadmin:latest
       restart: always
       environment:
-        PMA_HOSTS: onstrategy-mysql-docker.mysql,onstrategy-mysql-docker.mysql2 
+        PMA_HOSTS: mysql,mysql2 
         PMA_USER: root
         PMA_PASSWORD: root
         PMA_ARBITRARY: 1
