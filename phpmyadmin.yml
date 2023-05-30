@@ -14,5 +14,5 @@ services:
         - onstrategy-mysql-docker
 networks:
     onstrategy-mysql-docker:
-      name:  onstrategy-mysql-docker
+      name:  onstrategy_onstrategy-mysql-docker 
       external: true
