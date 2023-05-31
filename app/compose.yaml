@@ -12,6 +12,8 @@
       ports:
         - "8181:80"
         - "8888:8888"
+      networks: 
+        - onstrategy-mysql-docker
   networks:
     onstrategy-mysql-docker:
       name:  onstrategy-mysql-docker 
