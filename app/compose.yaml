@@ -1,0 +1,18 @@
+  version: "3.8"
+  services: 
+    apache-php:
+      environment:
+        APACHE_CONTENT_ROOT: "/var/www/html"
+        APACHE_PUBLIC_DIRECTORY: "public_html"
+      image: "onstrategy/web-app:latest"
+      restart: "always"
+      container_name: "oswebapp74"
+      volumes: 
+        - app-data:/var/www/html
+      ports:
+        - "8181:80"
+        - "8888:8888"
+  networks:
+    onstrategy-mysql-docker:
+      name:  onstrategy-mysql-docker 
+      external: true
