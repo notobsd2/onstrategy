@@ -1,0 +1,18 @@
+[mysqld]
+skip-host-cache
+skip-name-resolve
+datadir = /var/lib/mysql
+!includedir /etc/mysql/conf.d/
+
+general_log_file        = /var/lib/mysql/mysql.log
+general_log             = 1
+#
+# Error log - should be very few entries.
+#
+log_error = /var/lib/mysql/error.log
+#
+# Here you can see queries with especially long duration
+slow_query_log 		= 1
+log_slow_queries	= /var/lib/mysql/mysql-slow.log
+#long_query_time = 2
+#log-queries-not-using-indexes

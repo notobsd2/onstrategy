@@ -8,7 +8,7 @@ services:
       MYSQL_DATABASE: test_db
     volumes: 
       - mysql-data_55:/var/lib/mysql
-      - ./my.cnf:/etc/mysql/my.cnf
+      - ./my55.cnf:/etc/mysql/my.cnf
     networks: 
       - onstrategy-mysql-docker
     ports:
