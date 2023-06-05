@@ -1,13 +1,13 @@
 version: '3.8'
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql:5.5
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test_db
     volumes: 
-      - mysql-data:/var/lib/mysql
+      - mysql-data_55:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
     networks: 
       - onstrategy-mysql-docker
@@ -27,7 +27,7 @@ services:
     ports:
       - "3310:3306"
 volumes: 
-  mysql-data: 
+  mysql-data_55: 
   mysql2-data:
 networks: 
   onstrategy-mysql-docker:
